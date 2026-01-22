@@ -438,8 +438,8 @@ export default function PCBricksLanding() {
       <div className="hidden md:flex items-center space-x-8">
         <a href="#solutions" className="nav-link">Solutions</a>
         <a href="#why-us" className="nav-link">Why Us</a>
+        <a href="#blog" className="nav-link">Blog</a>
         <a href="#contact" className="nav-link">Contact</a>
-        <a href="/blog" className="nav-link">Blog</a>
       </div>
 
       {/* Right */}
@@ -472,8 +472,8 @@ export default function PCBricksLanding() {
       <div className="md:hidden mt-4 flex flex-col bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 space-y-4">
         <a href="#solutions" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Solutions</a>
         <a href="#why-us" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Why Us</a>
+        <a href="#blog" className="mobile-link">Blog</a>
         <a href="#contact" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
-        <a href="/blog" className="mobile-link">Blog</a>
 
         <div className="flex items-center gap-3">
           <Sun className="h-4 w-4" />
@@ -783,7 +783,7 @@ export default function PCBricksLanding() {
 						</div>
 					</div>
 				</section>
-				<section className="py-20 bg-gray-50 dark:bg-gray-900">
+				<section id="blog" className="py-20 bg-gray-50 dark:bg-gray-900">
   <div className="container mx-auto px-4">
 
     <div className="text-center mb-16">
