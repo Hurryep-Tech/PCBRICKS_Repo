@@ -1002,8 +1002,8 @@ export default function PCBricksLanding() {
 				<footer className='bg-gray-900 text-white py-16'>
 					<div className='container mx-auto px-4'>
 						<div className='flex flex-col lg:flex-row gap-12 lg:gap-8 justify-between items-start'>
-							<div className='max-w-md flex items-center'>
-								<div className='flex gap-4'>
+                            <div className='max-w-md flex-col lg:flex-row  md:items-center   flex !items-center'>
+                                <div className='flex flex-col lg:flex-row md:items-center !items-center lg:items-start   gap-4'>
 									<Image
 										src='/logo.png'
 										width={100}

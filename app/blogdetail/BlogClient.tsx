@@ -34,10 +34,12 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
             // Check for numbered sections (1., 2., 3., 4.)
             if (/^\d+\.\s/.test(trimmedLine)) {
                 return (
-                    <div key={index} className="mb-8">
+                    <div key={index} className="mb-8 ">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                            <div className="hidden lg:block md:block">
+                            <div className="w-10 h-6 md:w-8 md:h-8  bg-blue-600 rounded-full flex items-center justify-center text-white font-bold ">
                                 {trimmedLine.split('.')[0]}
+                            </div>
                             </div>
                             <h3 className="text-xl  font-bold text-gray-900 dark:text-white ">
                                 {trimmedLine.substring(trimmedLine.indexOf(' ') + 1)}
@@ -214,6 +216,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                         <div className="space-y-6">
                             {formatContent(blog.content)}
                         </div>
+                        <a href="https://www.pcbricks.com/#contact" className="text-blue-700  hover:underline">{blog.link}</a>
                     </div>
 
                     {/* Contact Section */}
