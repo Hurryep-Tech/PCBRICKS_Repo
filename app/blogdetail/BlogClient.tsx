@@ -87,12 +87,12 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
             if (trimmedLine.includes('depreciates') || trimmedLine.includes('CapEx') || trimmedLine.includes('OpEx')) {
                 const parts = trimmedLine.split(/\s{2,}/);
                 return (
-                    <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                    <div key={index} className=" md:grid-cols-2 gap-3 mb-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                         {parts.map((part, i) => (
-                            <div key={i} className={`flex items-center gap-2 ${i === 0 ? 'text-blue-600 dark:text-blue-400' : 'text-green-600 dark:text-green-400'}`}>
+                            <div key={i} className="flex items-center gap-2 text-gray-700">
                                 {i === 0 ? (
                                     <>
-                                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                                        {/* <div className="w-2 h-2 bg-blue-500 rounded-full"></div> */}
                                         <span className="font-medium text-justify">{part}</span>
                                     </>
                                 ) : (
