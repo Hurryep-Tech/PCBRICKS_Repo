@@ -2,38 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, ArrowRight } from "lucide-react";
-import blog1 from '../../public/blogs/lap1.jpg';
-import blog2 from '../../public/blogs/lap2.jpg';
-import blog3 from '../../public/blogs/lap3.jpg';
+import { blogs } from "@/app/data/blogs";
+
 import Navbar from "../navbar/Navbar";
 import Footer from "@/app/footer/Footer";
 export default function BlogPage() {
-    const blogs = [
-        {
-            slug: "best-laptop-rental-services-bangalore",
-            title: "Why PCBricks Is Transforming Laptop Rentals in Bangalore’s Tech Ecosystem",
-            desc: "Bangalore isn’t just India’s tech capital — it’s a melting pot of startups, freelancers, remote-first teams, and enterprise powerhouses that need efficient computing on-demand. Traditional device purchasing models are struggling to keep up with this rapid shift, and that’s where laptop rentals are quietly becoming the MVP of operational scalability. PCBricks is pioneering this wave by making laptop rentals smarter, faster, and more cost-aligned with how modern teams actually work.",
-            image: blog1,
-            date: "Jan 19, 2024",
-            category: "Web Development"
-        },
-        {
-            slug: "blog-post-2",
-            title: "Blog Post 2",
-            desc: "This is a summary of blog post 2.",
-            image: blog2,
-            date: "Jan 18, 2024",
-            category: "AI & ML"
-        },
-        {
-            slug: "blog-post-3",
-            title: "Blog Post 3",
-            desc: "This is a summary of blog post 3. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This is a summary of blog post 3. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: blog3,
-            date: "Jan 17, 2024",
-            category: "Cloud Computing"
-        }
-    ];
 
     const truncateWords = (text: string, limit: number = 30) => {
         const words = text.split(" ");
@@ -50,17 +23,17 @@ export default function BlogPage() {
             <Navbar />
             <div className='bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white'>
                 {/* <div className="min-h-screen bg-linear-to-b from-gray-50 to-white"> */}
-                <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 text-gray-200 py-12 sm:py-16">
+                <div className="mt-12 dark:text-gray-100 text-gray-900 py-12 sm:py-16">
                     <div className="max-w-7xl mx-auto px-4 text-center">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Our Latest Blogs</h1>
-                        <p className="text-lg sm:text-xl text-gray-200 max-w-3xl mx-auto mb-6">
+                        <p className="text-lg sm:text-xl dark:text-gray-100  text-gray-900 max-w-3xl mx-auto ">
                             Discover insightful articles on technology, development, and innovation
                         </p>
                     </div>
                 </div>
 
                 <div className="max-full min-h-screen mx-auto px-4 py-8 sm:py-12">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {blogs.map((blog, index) => {
                             const { text, truncated } = truncateWords(blog.desc, 30);
                             return (
