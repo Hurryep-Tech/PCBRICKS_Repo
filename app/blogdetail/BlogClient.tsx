@@ -2,11 +2,11 @@
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import {
-  Calendar,
-  ArrowLeft,
-  CheckCircle,
-  MapPin,
-  TrendingUp
+    Calendar,
+    ArrowLeft,
+    CheckCircle,
+    MapPin,
+    TrendingUp
 } from "lucide-react";
 import Navbar from "../navbar/Navbar";
 import Footer from "@/app/footer/Footer";
@@ -15,16 +15,22 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
     const searchParams = useSearchParams();
     const router = useRouter();
     const slug = searchParams.get("slug");
-        
+
     // Format the content - simple and clean
     const formatContent = (content) => {
+
         const lines = content.split('\n');
         return lines.map((line, index) => {
             const trimmedLine = line.trim();
-            
+            const isBullet =
+                trimmedLine.length > 0 &&
+                trimmedLine.length < 120 &&
+                !/[.:?]$/.test(trimmedLine) &&
+                /[a-zA-Z]/.test(trimmedLine);
+
             // Skip empty lines
             if (!trimmedLine) return <div key={index} className="h-4" />;
-            
+
             // Check for numbered sections (1., 2., 3., 4.)
             if (/^\d+\.\s/.test(trimmedLine)) {
                 return (
@@ -33,14 +39,14 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                             <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
                                 {trimmedLine.split('.')[0]}
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                            <h3 className="text-xl  font-bold text-gray-900 dark:text-white ">
                                 {trimmedLine.substring(trimmedLine.indexOf(' ') + 1)}
                             </h3>
                         </div>
                     </div>
                 );
             }
-            
+
             // Check for checkmark items (✔)
             if (trimmedLine.includes('✔')) {
                 return (
@@ -52,19 +58,19 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                     </div>
                 );
             }
-            
+
             // Check for bullet list items (starts with capital letter, not too long)
-            if (/^[A-Z][a-zA-Z\s]+$/.test(trimmedLine) && trimmedLine.length < 50) {
+            if (isBullet) {
                 return (
-                    <div key={index} className="flex items-start gap-2 mb-2 ml-6">
+                    <div key={index} className="flex items-start gap-2 mb-0 ml-0 ">
                         <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></div>
-                        <span className="text-gray-700 dark:text-gray-300 text-justify">
+                        <span className="text-gray-700 font-bold dark:text-gray-300 text-justify">
                             {trimmedLine}
                         </span>
                     </div>
                 );
             }
-            
+
             // Check for location items
             if (['Koramangala', 'HSR Layout', 'Indiranagar', 'Whitefield', 'Electronic City', 'Marathahalli', 'Bannerghatta Road', 'Bellandur', 'Manyata Tech Park'].some(loc => trimmedLine === loc)) {
                 return (
@@ -76,17 +82,17 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                     </div>
                 );
             }
-            
+
             // Check for comparison lines
             if (trimmedLine.includes('depreciates') || trimmedLine.includes('CapEx') || trimmedLine.includes('OpEx')) {
                 const parts = trimmedLine.split(/\s{2,}/);
                 return (
                     <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                         {parts.map((part, i) => (
-                            <div key={i} className={`flex items-center gap-2 ${i === 0 ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
+                            <div key={i} className={`flex items-center gap-2 ${i === 0 ? 'text-blue-600 dark:text-blue-400' : 'text-green-600 dark:text-green-400'}`}>
                                 {i === 0 ? (
                                     <>
-                                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                                         <span className="font-medium text-justify">{part}</span>
                                     </>
                                 ) : (
@@ -100,7 +106,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                     </div>
                 );
             }
-            
+
             // Check for CTA section (contains Call/WhatsApp, Website, Email)
             if (trimmedLine.includes('Call / WhatsApp') || trimmedLine.includes('Website:') || trimmedLine.includes('Email:')) {
                 return (
@@ -111,7 +117,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                     </div>
                 );
             }
-            
+
             // Check for section heading (bold text without numbers)
             if (trimmedLine.split(' ').length <= 8 && /^[A-Z][a-zA-Z\s]+$/.test(trimmedLine)) {
                 return (
@@ -120,7 +126,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                     </h4>
                 );
             }
-            
+
             // Check for question
             if (trimmedLine.endsWith('?')) {
                 return (
@@ -131,7 +137,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                     </div>
                 );
             }
-            
+
             // Regular paragraph
             return (
                 <p key={index} className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-justify">
@@ -166,7 +172,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                                 {blog.date}
                             </span>
                         </div>
-                        
+
                         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                             {blog.title}
                         </h1>
@@ -215,7 +221,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                             Ready to Get Started?
                         </h3>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Contact Information</h4>
@@ -231,7 +237,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                                             <p className="font-medium text-gray-900 dark:text-white">+91 8105891568</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="flex items-center gap-3">
                                         <div className="p-2 bg-white dark:bg-gray-700 rounded-lg">
                                             <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,7 +249,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                                             <p className="font-medium text-gray-900 dark:text-white">pcbricksinfo@gmail.com</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="flex items-center gap-3">
                                         <div className="p-2 bg-white dark:bg-gray-700 rounded-lg">
                                             <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -257,7 +263,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <h4 className="font-semibold text-gray-800 dark:text-white mb-3">Service Areas</h4>
                                 <p className="text-gray-600 dark:text-gray-300 mb-3">

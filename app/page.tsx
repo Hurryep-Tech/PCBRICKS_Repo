@@ -17,6 +17,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
+import BlogCards from "@/components/BlogCards/BlogCards";
 import {
 	Brain,
 	Truck,
@@ -37,6 +38,8 @@ import {
 	ChevronLeft,
 	ChevronRight,
 	X,
+
+  Menu,
 	MessageCircle,
 	Headphones,
 	Recycle,
@@ -45,9 +48,12 @@ import {
 	Facebook as LucideFacebook,
 	Twitter as LucideTwitter,
 	Instagram as LucideInstagram,
+	Calendar,
+	Link,
 } from 'lucide-react';
 import Image from 'next/image';
 import LaptopRentGrid from '@/components/LaptopRentGrid';
+import { blogs } from './data/blogs';
 
 // Quote Modal Component
 const QuoteModal = ({
@@ -287,6 +293,7 @@ const QuoteModal = ({
 };
 
 export default function PCBricksLanding() {
+	  const [isMenuOpen, setIsMenuOpen] = useState(false); // ✅ ADD THIS
 	const [darkMode, setDarkMode] = useState(false);
 	const [currentTestimonial, setCurrentTestimonial] = useState(0);
 	// const [pricingToggle, setPricingToggle] = useState('laptop');
@@ -418,61 +425,75 @@ export default function PCBricksLanding() {
 			}`}>
 			<div className='bg-white dark:bg-gray-900 text-gray-900 dark:text-white'>
 				{/* Navbar */}
-				<nav className='fixed top-0 w-full z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20'>
-					<div className='container mx-auto px-4 py-4'>
-						<div className='flex items-center justify-between'>
-							<div className='flex items-center space-x-3'>
-								<Image
-									src='/logo.png'
-									width={50}
-									height={50}
-									alt='PCBricks Logo'
-									className='w-10 h-10'
-								/>
-							</div>
-							<div className='hidden md:flex items-center space-x-8'>
-								<a
-									href='#solutions'
-									className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'>
-									Solutions
-								</a>
-								{/* <a
-                  href="#pricing"
-                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                >
-                  Pricing
-                </a> */}
-								<a
-									href='#why-us'
-									className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'>
-									Why Us
-								</a>
-								<a
-									href='#contact'
-									className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'>
-									Contact
-								</a>
-								<a
-									href='/blog'
-									className='text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'>
-									Blog
-								</a>
-							</div>
-							<div className='flex items-center space-x-4'>
-								<div className='flex items-center space-x-2'>
-									<Sun className='h-4 w-4' />
-									<Switch checked={darkMode} onCheckedChange={setDarkMode} />
-									<Moon className='h-4 w-4' />
-								</div>
-								<Button
-									onClick={() => setIsQuoteModalOpen(true)}
-									className='bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full px-6 transition-all duration-300 hover:scale-105'>
-									Get a Quote
-								</Button>
-							</div>
-						</div>
-					</div>
-				</nav>
+				<nav className="fixed top-0 w-full z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-700/20">
+  <div className="container mx-auto px-4 py-4">
+    <div className="flex items-center justify-between">
+
+      {/* Logo */}
+      <div className="flex items-center space-x-3">
+        <Image src="/logo.png" width={50} height={50} alt="PCBricks Logo" className="w-10 h-10" />
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:flex items-center space-x-8">
+        <a href="#solutions" className="nav-link">Solutions</a>
+        <a href="#why-us" className="nav-link">Why Us</a>
+        <a href="#contact" className="nav-link">Contact</a>
+        <a href="/blog" className="nav-link">Blog</a>
+      </div>
+
+      {/* Right */}
+      <div className="flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-2">
+          <Sun className="h-4 w-4" />
+          <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+          <Moon className="h-4 w-4" />
+        </div>
+
+        <Button
+          onClick={() => setIsQuoteModalOpen(true)}
+          className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full px-6"
+        >
+          Get a Quote
+        </Button>
+
+        {/* Burger */}
+        <button
+          className="md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+    </div>
+
+    {/* Mobile Menu */}
+    {isMenuOpen && (
+      <div className="md:hidden mt-4 flex flex-col bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 space-y-4">
+        <a href="#solutions" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Solutions</a>
+        <a href="#why-us" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Why Us</a>
+        <a href="#contact" className="mobile-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
+        <a href="/blog" className="mobile-link">Blog</a>
+
+        <div className="flex items-center gap-3">
+          <Sun className="h-4 w-4" />
+          <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+          <Moon className="h-4 w-4" />
+        </div>
+
+        <Button
+          onClick={() => {
+            setIsQuoteModalOpen(true);
+            setIsMenuOpen(false);
+          }}
+          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full"
+        >
+          Get a Quote
+        </Button>
+      </div>
+    )}
+  </div>
+</nav>
 
 				{/* Hero Section */}
 				<section className='pt-24 pb-20 relative overflow-hidden'>
@@ -762,6 +783,21 @@ export default function PCBricksLanding() {
 						</div>
 					</div>
 				</section>
+				<section className="py-20 bg-gray-50 dark:bg-gray-900">
+  <div className="container mx-auto px-4">
+
+    <div className="text-center mb-16">
+      <h2 className="text-4xl font-bold mb-4">Our Latest Blogs</h2>
+      <p className="text-xl text-gray-600 dark:text-gray-300">
+        Discover insightful articles on technology, development, and innovation
+      </p>
+    </div>
+
+    <BlogCards />
+
+  </div>
+</section>
+
 
 				{/* Pricing Preview */}
 				{/* <section id="pricing" className="py-20">
