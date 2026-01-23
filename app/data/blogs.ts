@@ -1,7 +1,7 @@
-import blog1 from "../../public/blogs/lap1.jpg";
-import blog2 from "../../public/blogs/lap2.jpg";
-import blog3 from "../../public/blogs/lap3.jpg";
-import blog4 from "../../public/blogs/lap4.jpg";
+import blog1 from "../../public/blogs/blog1.jpeg";
+import blog2 from "../../public/blogs/blog2.jpeg";
+import blog3 from "../../public/blogs/blog3.jpeg";
+import blog4 from "../../public/blogs/blog4.jpeg";
 export const blogs = [
   {
     slug: "best-laptop-rental-services-bangalore",

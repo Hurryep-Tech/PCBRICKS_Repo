@@ -216,12 +216,12 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
 
           {/* Featured Image */}
           {blog.image && (
-            <div className="relative h-64 md:h-80 rounded-xl overflow-hidden mb-10 lg:h-[400px]">
+            <div className="relative w-full h-64  md:h-[540px] rounded-xl overflow-hidden mb-10">
               <Image
                 src={blog.image}
                 alt={blog.title}
                 fill
-                className="object-fill"
+                className="object-cover lg:object-cover md:h-64 md:object-fit "
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 priority
               />

@@ -70,25 +70,25 @@ export default function BlogCards() {
                 border border-gray-200 dark:border-gray-700
                 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-52 overflow-hidden">
                   <Image
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="object-fill group-hover:scale-110 transition-transform duration-500"
                   />
-                  <span
+                  {/* <span
                     className="absolute top-2 left-2 px-3 py-1 bg-gradient-to-r
                     from-blue-600 to-purple-600 text-white text-sm rounded-full"
                   >
                     {blog.category}
-                  </span>
+                  </span> */}
                 </div>
 
                 <div className="p-5 flex flex-col grow">
-                  <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
+                  {/* <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
                     <Calendar size={12} /> {blog.date}
-                  </div>
+                  </div> */}
 
                   <h3 className="text-lg font-bold mb-2 line-clamp-2 text-gray-900 dark:text-white">
                     {blog.title}
