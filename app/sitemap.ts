@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
 
-    ...blogs.map(blog => ({
+    ...blogs.map((blog) => ({
       url: `${BASE_URL}/blogdetail/${blog.slug}`,
       lastModified: new Date(),
     })),

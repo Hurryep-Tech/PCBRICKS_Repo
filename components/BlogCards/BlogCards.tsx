@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useRef } from "react";
 import Link from "next/link";
@@ -19,12 +19,11 @@ export default function BlogCards() {
   const paginationRef = useRef<HTMLDivElement>(null);
 
   const truncateWords = (text: string = "", limit = 20) => {
-  const words = text.trim().split(/\s+/);
-  return words.length > limit
-    ? words.slice(0, limit).join(" ") + "..."
-    : text;
-};
-
+    const words = text.trim().split(/\s+/);
+    return words.length > limit
+      ? words.slice(0, limit).join(" ") + "..."
+      : text;
+  };
 
   return (
     <div className="py-8 relative">
@@ -62,10 +61,12 @@ export default function BlogCards() {
         {blogs.map((blog, index) => (
           <SwiperSlide key={index}>
             <Link
-              href={`/blogdetail?slug=${blog.slug}`}
-              className="block group h-full"
+              key={index}
+              href={`/blogdetail/${blog.slug}`}
+              className="block group"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden
+              <div
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden
                 border border-gray-200 dark:border-gray-700
                 shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col"
               >
@@ -76,8 +77,10 @@ export default function BlogCards() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <span className="absolute top-2 left-2 px-3 py-1 bg-gradient-to-r
-                    from-blue-600 to-purple-600 text-white text-sm rounded-full">
+                  <span
+                    className="absolute top-2 left-2 px-3 py-1 bg-gradient-to-r
+                    from-blue-600 to-purple-600 text-white text-sm rounded-full"
+                  >
                     {blog.category}
                   </span>
                 </div>
@@ -91,9 +94,9 @@ export default function BlogCards() {
                     {blog.title}
                   </h3>
 
-                 <p className="text-gray-600 dark:text-gray-300 line-clamp-3 min-h-[72px]">
-  {truncateWords(blog.desc)}
-</p>
+                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3 min-h-[72px]">
+                    {truncateWords(blog.desc)}
+                  </p>
 
                   <div className="flex justify-end items-center !mt-4 text-blue-600 font-medium">
                     View More <ArrowRight className="ml-1" />
@@ -105,32 +108,33 @@ export default function BlogCards() {
         ))}
       </Swiper>
 
-{/* Custom Pagination & Arrows */}
-{/* Custom Pagination & Arrows */}
-<div className="flex justify-center mt-8">
-<div className="flex   items-center  mt-4">
-  {/* Previous Arrow */}
-  <button
-    ref={prevRef}
-    className="w-10 h-10 flex items-center  justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-white hover:bg-blue-600 hover:text-white transition"
-  >
-    <ChevronLeft className="h-5 w-5" />
-  </button>
+      {/* Custom Pagination & Arrows */}
+      {/* Custom Pagination & Arrows */}
+      <div className="flex justify-center mt-8">
+        <div className="flex   items-center  mt-4">
+          {/* Previous Arrow */}
+          <button
+            ref={prevRef}
+            className="w-10 h-10 flex items-center  justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-white hover:bg-blue-600 hover:text-white transition"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
 
-  {/* Pagination Dots */}
-  <div ref={paginationRef} className="flex items-center gap-1 flex-1 justify-center mx-4"></div>
+          {/* Pagination Dots */}
+          <div
+            ref={paginationRef}
+            className="flex items-center gap-1 flex-1 justify-center mx-4"
+          ></div>
 
-  {/* Next Arrow */}
-  <button
-    ref={nextRef}
-    className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-white hover:bg-blue-600 hover:text-white transition"
-  >
-    <ChevronRight className="h-5 w-5" />
-  </button>
-</div>
-</div>
-
-
+          {/* Next Arrow */}
+          <button
+            ref={nextRef}
+            className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-gray-700 dark:text-white hover:bg-blue-600 hover:text-white transition"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

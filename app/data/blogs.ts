@@ -1,19 +1,21 @@
-import blog1 from '../../public/blogs/lap1.jpg';
-import blog2 from '../../public/blogs/lap2.jpg';
-import blog3 from '../../public/blogs/lap3.jpg';
-import blog4 from '../../public/blogs/lap4.jpg';
+import blog1 from "../../public/blogs/lap1.jpg";
+import blog2 from "../../public/blogs/lap2.jpg";
+import blog3 from "../../public/blogs/lap3.jpg";
+import blog4 from "../../public/blogs/lap4.jpg";
 export const blogs = [
-        {    
-            slug:"best-laptop-rental-services-bangalore",
-            metaTitle:"Best Laptop Rental Services in Bangalore | PCBricks",
-            metaDescription:" Looking for laptop rentals in Bangalore? PCBricks offers fast delivery, flexible pricing, and high-performance devices for students, startups, and corporates.",
-            canonical:"https://www.pcbricks.com/best-laptop-rental-services-bangalore",
-            title: "Why PCBricks Is Transforming Laptop Rentals in Bangalore’s Tech Ecosystem",
-            desc: `Bangalore isn’t just India’s tech capital — it’s a melting pot of startups, freelancers, remote-first teams, and enterprise powerhouses that need efficient computing on-demand. Traditional device purchasing models are struggling to keep up with this rapid shift, and that’s where laptop rentals are quietly becoming the MVP of operational scalability. PCBricks is pioneering this wave by making laptop rentals smarter, faster, and more cost-aligned with how modern teams actually work.
+  {
+    slug: "best-laptop-rental-services-bangalore",
+    metaTitle: "Best Laptop Rental Services in Bangalore | PCBricks",
+    metaDescription:
+      " Looking for laptop rentals in Bangalore? PCBricks offers fast delivery, flexible pricing, and high-performance devices for students, startups, and corporates.",
+    canonical: "https://www.pcbricks.com/best-laptop-rental-services-bangalore",
+    title:
+      "Why PCBricks Is Transforming Laptop Rentals in Bangalore’s Tech Ecosystem",
+    desc: `Bangalore isn’t just India’s tech capital — it’s a melting pot of startups, freelancers, remote-first teams, and enterprise powerhouses that need efficient computing on-demand. Traditional device purchasing models are struggling to keep up with this rapid shift, and that’s where laptop rentals are quietly becoming the MVP of operational scalability. PCBricks is pioneering this wave by making laptop rentals smarter, faster, and more cost-aligned with how modern teams actually work.
             In this playbook, we break down how PCBricks is shaping the future of laptop rentals in Bangalore’s evolving hardware ecosystem.`,
-            image: blog1,
-            category: "Web Development",
-            content:`1. What Users Are Searching For: Laptop Rentals in Bangalore That Are Fast, Affordable, and Reliable
+    image: blog1,
+    category: "Web Development",
+    content: `1. What Users Are Searching For: Laptop Rentals in Bangalore That Are Fast, Affordable, and Reliable
 Search data and real-world user behavior show a pattern: customers want speed, budget alignment, and zero operational friction. Students are Googling things like:
 “affordable laptop rentals in Bangalore”
 “laptop rentals for students in Bangalore”
@@ -75,21 +77,24 @@ PCBricks is enabling this shift by not just renting hardware, but creating a har
 Ready to Rent Smarter in Bangalore?
 If you’re looking for laptop rentals in Bangalore, bulk corporate laptop deployment, or student laptop rental options with doorstep delivery, PCBricks has you covered. Get the right hardware exactly when you need it without burning capital or compromising performance.
 `,
-link:"Explore rentals now scale smarter with PCBricks."
-        },
-        {
-            slug:"buying-vs-renting-laptops-bangalore-business-guide",
-            metaTitle:"Buying vs Renting Laptops in Bangalore for Businesses",
-            metaDescription:" Compare buying vs renting laptops in Bangalore and uncover what businesses overpay for. Explore corporate laptop rentals that cut CapEx and boost scaling efficiency.",
-            canonical:"https://www.pcbricks.com/buying-vs-renting-laptops-bangalore-business-guide",
-            title: "Buying vs Renting Laptops in Bangalore: Which Is best For Business?",
-            desc: `Bangalore is stacked with IT giants, SaaS unicorns, consultancies, digital agencies, and early-stage startups — and they all run on hardware. But here’s the kicker: the traditional model of buying laptops is starting to look like burning cash for no strategic upside. With unpredictable hiring cycles, hybrid work, and cloud-native development taking over, agility beats ownership. That’s where laptop rentals are quietly becoming the cost-efficiency hack every smart business in Bangalore is adopting.
+    link: "Explore rentals now scale smarter with PCBricks.",
+  },
+  {
+    slug: "buying-vs-renting-laptops-bangalore-business-guide",
+    metaTitle: "Buying vs Renting Laptops in Bangalore for Businesses",
+    metaDescription:
+      " Compare buying vs renting laptops in Bangalore and uncover what businesses overpay for. Explore corporate laptop rentals that cut CapEx and boost scaling efficiency.",
+    canonical:
+      "https://www.pcbricks.com/buying-vs-renting-laptops-bangalore-business-guide",
+    title:
+      "Buying vs Renting Laptops in Bangalore: Which Is best For Business?",
+    desc: `Bangalore is stacked with IT giants, SaaS unicorns, consultancies, digital agencies, and early-stage startups — and they all run on hardware. But here’s the kicker: the traditional model of buying laptops is starting to look like burning cash for no strategic upside. With unpredictable hiring cycles, hybrid work, and cloud-native development taking over, agility beats ownership. That’s where laptop rentals are quietly becoming the cost-efficiency hack every smart business in Bangalore is adopting.
             Let’s break down the real economics, ecosystem trends, and what businesses are accidentally overpaying for.
             `,
-            image: blog2,
-            date: "Jan 18, 2024",
-            category: "AI & ML",
-            content:`1. What Customers Actually Search For: Renting Laptops in Bangalore That Solve Operational Stress
+    image: blog2,
+    date: "Jan 18, 2024",
+    category: "AI & ML",
+    content: `1. What Customers Actually Search For: Renting Laptops in Bangalore That Solve Operational Stress
 Search intent is shifting. When Bangalore companies hit Google, their queries look more like decision-making triggers than generic browsing. Examples include:
 laptop rentals for businesses in Bangalore
 corporate laptop rental Bangalore
@@ -141,21 +146,24 @@ Corporate Laptop Rentals for High-Velocity Teams
 PCBricks provides bulk laptop rentals for businesses in Bangalore with fast deployment, flexible billing, and standardized configurations. Skip CapEx, avoid depreciation, and scale your workforce efficiently with hardware that matches your operational needs. Connect with PCBricks to streamline corporate onboarding and project-based hardware provisioning.
 
 `,
-link:"Scale your workforce without CapEx. Contact PCBricks for corporate laptop rentals in Bangalore."
-        },
-        {
-            slug:"best-laptop-rental-services-in-bangalore-for-students",
-            metaTitle:"Best Laptop Rental Services in Bangalore | PCBricks",
-            metaDescription:" Find the best laptop rental services in Bangalore for students, professionals, and corporates. Get flexible plans, fast delivery, and performance-ready devices.",
-            canonical:"https://www.pcbricks.com/best-laptop-rental-services-in-bangalore",
-            title: "Best Laptop Rental Services in Bangalore for Students, Professionals & Corporates",
-            desc: `Bangalore has evolved into India’s most dynamic tech corridor. The way people consume hardware has changed accordingly. Students need budget-friendly devices for projects and internships. Freelancers need performance laptops on flexible timelines. Corporates need bulk deployment at speed without CapEx drag. This is exactly why laptop rentals have gained major traction across Bangalore, and why search intent has shifted from ownership to on-demand hardware consumption.
+    link: "Scale your workforce without CapEx. Contact PCBricks for corporate laptop rentals in Bangalore.",
+  },
+  {
+    slug: "best-laptop-rental-services-in-bangalore-for-students",
+    metaTitle: "Best Laptop Rental Services in Bangalore | PCBricks",
+    metaDescription:
+      " Find the best laptop rental services in Bangalore for students, professionals, and corporates. Get flexible plans, fast delivery, and performance-ready devices.",
+    canonical:
+      "https://www.pcbricks.com/best-laptop-rental-services-in-bangalore",
+    title:
+      "Best Laptop Rental Services in Bangalore for Students, Professionals & Corporates",
+    desc: `Bangalore has evolved into India’s most dynamic tech corridor. The way people consume hardware has changed accordingly. Students need budget-friendly devices for projects and internships. Freelancers need performance laptops on flexible timelines. Corporates need bulk deployment at speed without CapEx drag. This is exactly why laptop rentals have gained major traction across Bangalore, and why search intent has shifted from ownership to on-demand hardware consumption.
                 Below is a structured deep-dive into how customers search for rental laptops, what they expect, and how rental providers are reshaping Bangalore’s hardware ecosystem for smarter, more agile workflows.
             `,
-            image: blog3,
-            date: "Jan 17, 2024",           
-            category: "Cloud Computing",
-            content:`1. What Users Actually Search For When Renting Laptops in Bangalore
+    image: blog3,
+    date: "Jan 17, 2024",
+    category: "Cloud Computing",
+    content: `1. What Users Actually Search For When Renting Laptops in Bangalore
 Search intent is the single most credible signal for demand patterns. When students, professionals, and corporate teams go online, the queries are specific, high-intent, and tied to real needs:
 laptop rentals in Bangalore
 student laptop rentals Bangalore
@@ -210,21 +218,23 @@ Corporate Laptop Rentals for High-Velocity Teams
 PCBricks delivers flexible laptop rental solutions for students, professionals, and enterprise teams across Bangalore. Whether you need bulk corporate deployments, short-term student plans, or performance hardware for project cycles, PCBricks aligns hardware provisioning with how modern workforces operate. Skip CapEx, avoid depreciation, and get hardware on demand with fast delivery and standardized configurations.
 
 `,
-link:"To explore laptop rentals in Bangalore for teams, contractors, interns, and onboarding environments, connect with PCBricks for tailored device provisioning."
-        },
-        {
-            slug:"laptop-rental-bangalore-pricing-benefits-use-cases",
-            metaTitle:"Laptop Rental in Bangalore: Pricing, Benefits",
-            metaDescription:"Explore laptop rental pricing, benefits, and best use cases in Bangalore for students, professionals, and corporates. Compare options and scale without ownership.",
-            canonical:"https://www.pcbricks.com/laptop-rental-bangalore-pricing-benefits-use-cases",
-            title: "Laptop Rental in Bangalore: Pricing, Benefits, and Best Use Cases",
-            desc: `Bangalore’s technology ecosystem is built on rapid onboarding, project-based workflows, hybrid work arrangements, and lean capital strategies. As a result, laptop rentals have transitioned from a niche offering to a mainstream hardware procurement model for students, professionals, startups, and enterprise teams. Understanding how laptop rentals are priced, who benefits, and where they fit operationally helps businesses and individuals make financially strategic decisions.
+    link: "To explore laptop rentals in Bangalore for teams, contractors, interns, and onboarding environments, connect with PCBricks for tailored device provisioning.",
+  },
+  {
+    slug: "laptop-rental-bangalore-pricing-benefits-use-cases",
+    metaTitle: "Laptop Rental in Bangalore: Pricing, Benefits",
+    metaDescription:
+      "Explore laptop rental pricing, benefits, and best use cases in Bangalore for students, professionals, and corporates. Compare options and scale without ownership.",
+    canonical:
+      "https://www.pcbricks.com/laptop-rental-bangalore-pricing-benefits-use-cases",
+    title: "Laptop Rental in Bangalore: Pricing, Benefits, and Best Use Cases",
+    desc: `Bangalore’s technology ecosystem is built on rapid onboarding, project-based workflows, hybrid work arrangements, and lean capital strategies. As a result, laptop rentals have transitioned from a niche offering to a mainstream hardware procurement model for students, professionals, startups, and enterprise teams. Understanding how laptop rentals are priced, who benefits, and where they fit operationally helps businesses and individuals make financially strategic decisions.
             This guide breaks down how users search for laptop rentals, how pricing structures work, and which scenarios optimize value for the user.
             `,
-            image: blog4,
-            date: "Jan 17, 2024",           
-            category: "Cloud Computing",
-            content:`1. How Users Search for Laptop Rentals in Bangalore
+    image: blog4,
+    date: "Jan 17, 2024",
+    category: "Cloud Computing",
+    content: `1. How Users Search for Laptop Rentals in Bangalore
 Search intent reveals the reality of demand in Bangalore. When users go online, they are not browsing, they are executing a decision. Typical queries include:
 laptop rental in Bangalore
 laptop on rent near me Bangalore
@@ -296,6 +306,6 @@ Geo clusters with high laptop rental adoption include Koramangala, Whitefield, E
 Relevant geo keywords 
 laptop rental Whitefield, laptop rental Koramangala, corporate laptop rentals Bangalore, student laptop rental HSR Layout, MacBook rental Indiranagar
 Scale Hardware Without Ownership Complexity`,
-link:"To explore laptop rentals in Bangalore for corporate, professional, or academic usage, connect with PCBricks for tailored provisioning."
-        },      
-    ];
+    link: "To explore laptop rentals in Bangalore for corporate, professional, or academic usage, connect with PCBricks for tailored provisioning.",
+  },
+];
