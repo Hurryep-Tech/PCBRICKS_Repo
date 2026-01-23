@@ -592,7 +592,7 @@ export default function PCBricksLanding() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-6">
-                  <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/50 dark:to-purple-900/50 text-blue-700 dark:text-blue-300 border-0 rounded-full px-4 py-2">
+                  <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/60 dark:to-purple-900/80 text-blue-700 dark:text-white border-0 rounded-full px-4 py-2">
                     ✨ Scale Faster with Smart Devices
                   </Badge>
                   <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
