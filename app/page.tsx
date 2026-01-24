@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -47,8 +47,6 @@ import {
   Facebook as LucideFacebook,
   Twitter as LucideTwitter,
   Instagram as LucideInstagram,
-  Calendar,
-  Link,
 } from "lucide-react";
 import Image from "next/image";
 import LaptopRentGrid from "@/components/LaptopRentGrid";
@@ -155,7 +153,7 @@ const QuoteModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-in fade-in duration-300"
@@ -163,8 +161,13 @@ const QuoteModal = ({
       />
 
       {/* Modal */}
-      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md mx-4 animate-in slide-in-from-bottom-4 zoom-in-95 duration-300">
-        <div className="p-6">
+      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl
+      w-full max-w-[90%] sm:max-w-md
+      max-h-[90vh] overflow-y-auto
+      p-4 sm:p-6
+      animate-in slide-in-from-bottom-4 zoom-in-95 duration-300">
+
+        <div className="p-6 ">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -178,9 +181,9 @@ const QuoteModal = ({
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="absolute top-3 right-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 z-10"
             >
-              <X className="h-5 w-5" />
+              <X className="h-10 w-10" />
             </Button>
           </div>
 
@@ -226,9 +229,8 @@ const QuoteModal = ({
                 onChange={(e) =>
                   handleInputChange("contactNumber", e.target.value)
                 }
-                className={`mt-1 ${
-                  errors.contactNumber ? "border-red-500" : ""
-                }`}
+                className={`mt-1 ${errors.contactNumber ? "border-red-500" : ""
+                  }`}
                 placeholder="+91 98765 43210"
               />
               {errors.contactNumber && (
@@ -247,9 +249,8 @@ const QuoteModal = ({
                 }
               >
                 <SelectTrigger
-                  className={`mt-1 ${
-                    errors.serviceInterested ? "border-red-500" : ""
-                  }`}
+                  className={`mt-1 ${errors.serviceInterested ? "border-red-500" : ""
+                    }`}
                 >
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -297,7 +298,25 @@ const QuoteModal = ({
 
 export default function PCBricksLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // ✅ ADD THIS
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("darkMode") === "true";
+    }
+    return false;
+  });
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   // const [pricingToggle, setPricingToggle] = useState('laptop');
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -340,12 +359,18 @@ export default function PCBricksLanding() {
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+
     if (darkMode) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-  }, [darkMode]);
+  }, [darkMode, mounted]);
+
+
 
   const handleWhatsAppClick = () => {
     const phoneNumber = "917975506175";
@@ -460,9 +485,8 @@ export default function PCBricksLanding() {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 ${
-        darkMode ? "dark" : ""
-      }`}
+      className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark" : ""
+        }`}
     >
       <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         {/* Navbar */}
@@ -471,38 +495,48 @@ export default function PCBricksLanding() {
             <div className="flex items-center justify-between">
               {/* Logo */}
               <div className="flex items-center space-x-3">
-                <Image
-                  src="/logo.png"
-                  width={50}
-                  height={50}
-                  alt="PCBricks Logo"
-                  className="w-10 h-10"
-                />
+                <Link href="/">
+                  <Image
+                    src="/logo.png"
+                    width={50}
+                    height={50}
+                    alt="PCBricks Logo"
+                    className="w-10 h-10"
+                  />
+                </Link>
               </div>
 
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center space-x-8">
                 <a
                   href="#solutions"
-                  className={`nav-link ${activeSection === "solutions" ? "text-blue-600  underline font-semibold" : "text-gray-700 dark:text-gray-300"}`}
+                  className={`nav-link ${activeSection === "solutions"
+                    ? "text-blue-600 font-semibold underline decoration-2 underline-offset-8"
+                    : "text-gray-700 dark:text-gray-300"}`}
                 >
                   Solutions
                 </a>
                 <a
                   href="#why-us"
-                  className={`nav-link ${activeSection === "why-us" ? "text-blue-600 underline font-semibold" : "text-gray-700 dark:text-gray-300"}`}
+                  className={`nav-link ${activeSection === "why-us"
+                    ? "text-blue-600 font-semibold underline decoration-2 underline-offset-8"
+                    : "text-gray-700 dark:text-gray-300"}`}
                 >
                   Why Us
                 </a>
                 <a
                   href="#blog"
-                  className={`nav-link ${activeSection === "blog" ? "text-blue-600 underline font-semibold" : "text-gray-700 dark:text-gray-300"}`}
+                  className={`nav-link ${activeSection === "blog"
+                    ? "text-blue-600 font-semibold underline decoration-2 underline-offset-8"
+                    : "text-gray-700 dark:text-gray-300"}`}
                 >
                   Blog
                 </a>
                 <a
                   href="#contact"
-                  className={`nav-link ${activeSection === "contact" ? "text-blue-600 underline font-semibold" : "text-gray-700 dark:text-gray-300"}`}
+                  className={`nav-link ${activeSection === "contact"
+                    ? "text-blue-600 font-semibold underline decoration-2 underline-offset-8"
+                    : "text-gray-700 dark:text-gray-300"}`}
                 >
                   Contact
                 </a>
@@ -512,7 +546,10 @@ export default function PCBricksLanding() {
               <div className="flex items-center gap-4">
                 <div className="hidden sm:flex items-center gap-2">
                   <Sun className="h-4 w-4" />
-                  <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+                  {mounted && (
+                    <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+                  )}
+
                   <Moon className="h-4 w-4" />
                 </div>
 
@@ -563,7 +600,10 @@ export default function PCBricksLanding() {
 
                 <div className="flex items-center gap-3">
                   <Sun className="h-4 w-4" />
-                  <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+                  {mounted && (
+                    <Switch checked={darkMode} onCheckedChange={setDarkMode} />
+                  )}
+
                   <Moon className="h-4 w-4" />
                 </div>
 
@@ -1031,11 +1071,10 @@ export default function PCBricksLanding() {
                     <button
                       key={index}
                       onClick={() => setCurrentTestimonial(index)}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                        index === currentTestimonial
-                          ? "bg-blue-600 scale-125"
-                          : "bg-gray-300 dark:bg-gray-600"
-                      }`}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial
+                        ? "bg-blue-600 scale-125"
+                        : "bg-gray-300 dark:bg-gray-600"
+                        }`}
                     />
                   ))}
                 </div>

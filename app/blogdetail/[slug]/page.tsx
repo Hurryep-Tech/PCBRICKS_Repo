@@ -3,17 +3,15 @@ import { blogs } from "@/app/data/blogs";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import BlogDetailClient from "./BlogClient";
-
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
-  const blog = blogs.find((b) => b.slug === slug);
+  const { slug } = await params; // ✅ MUST await
 
+  const blog = blogs.find((b) => b.slug === slug);
   if (!blog) return {};
 
   return {
@@ -25,10 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogDetailPage({ params }: Props) {
-  const { slug } = params;
-  const blog = blogs.find((b) => b.slug === slug);
 
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = await params; // ✅ await here too
+
+  const blog = blogs.find((b) => b.slug === slug);
   if (!blog) notFound();
 
   return <BlogDetailClient blog={blog} />;

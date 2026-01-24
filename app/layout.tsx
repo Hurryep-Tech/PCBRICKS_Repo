@@ -137,6 +137,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        (function () {
+          try {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark") {
+              document.documentElement.classList.add("dark");
+            }
+          } catch (e) {}
+        })();
+      `,
+    }}
+  />
+</head>
       <body>{children}</body>
     </html>
   );

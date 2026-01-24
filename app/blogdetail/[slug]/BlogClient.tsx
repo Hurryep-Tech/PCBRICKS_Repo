@@ -89,7 +89,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
         return (
           <div key={index} className="flex items-center gap-2 mb-1 ml-8">
             <MapPin className="w-4 h-4 text-blue-500" />
-            <span className="text-gray-600 dark:text-gray-400 text-justify">
+            <span className="text-gray-600 dark:text-gray-300 text-justify">
               {trimmedLine}
             </span>
           </div>
@@ -109,7 +109,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
             className=" md:grid-cols-2 gap-3 mb-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg"
           >
             {parts.map((part, i) => (
-              <div key={i} className="flex items-center gap-2 text-gray-700">
+              <div key={i} className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
                 {i === 0 ? (
                   <>
                     {/* <div className="w-2 h-2 bg-blue-500 rounded-full"></div> */}
@@ -214,7 +214,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
             </h1>
           </header>
 
-          {/* Featured Image */}
+             {/* Featured Image */}
           {blog.image && (
             <div className="relative w-full h-64  md:h-[540px] rounded-xl overflow-hidden mb-10">
               <Image
@@ -260,7 +260,7 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
             <div className="space-y-4">{formatContent(blog.content)}</div>
             <a
               href="https://www.pcbricks.com/#contact"
-              className="text-blue-700  hover:underline"
+              className="text-blue-700 dark:text-blue-400 hover:underline"
             >
               {blog.link}
             </a>
