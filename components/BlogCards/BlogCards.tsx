@@ -86,9 +86,9 @@ export default function BlogCards() {
                 </div>
 
                 <div className="p-5 flex flex-col grow">
-                  {/* <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
+                  <div className="flex items-center gap-1 text-sm text-gray-500 mb-2">
                     <Calendar size={12} /> {blog.date}
-                  </div> */}
+                  </div>
 
                   <h3 className="text-lg font-bold mb-2 line-clamp-2 text-gray-900 dark:text-white">
                     {blog.title}

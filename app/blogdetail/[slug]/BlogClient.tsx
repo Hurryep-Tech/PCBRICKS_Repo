@@ -200,9 +200,6 @@ export default function BlogDetailClient({ blog }: { blog: any }) {
           {/* Header */}
           <header className="mb-10">
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                {blog.category}
-              </span>
               <span className="text-sm flex items-center gap-2 text-gray-500 dark:text-gray-400">
                 <Calendar size={16} />
                 {blog.date}
