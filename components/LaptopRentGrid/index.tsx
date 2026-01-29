@@ -96,7 +96,7 @@ const card: Variants = {
 const LaptopRentGrid: React.FC<LaptopRentGridProps> = ({ onContact }) => {
   return (
     <section
-      className="relative isolate overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50"
+      className="relative isolate overflow-hidden bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white"
       aria-labelledby="laptop-rental-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
@@ -104,11 +104,11 @@ const LaptopRentGrid: React.FC<LaptopRentGridProps> = ({ onContact }) => {
         <div className="mx-auto max-w-6xl text-center">
           <h2
             id="laptop-rental-heading"
-            className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900"
+            className="text-3xl sm:text-4xl font-extrabold tracking-tight dark:text-gray-100 text-slate-900"
           >
             Rent Branded Laptops — Lenovo, Dell, HP & Asus
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600">
+          <p className="mt-3 text-base sm:text-lg dark:text-gray-300 text-slate-600">
             Flexible laptop rentals with premium configurations — Intel i3–i9
             processors, SSD storage, Windows 11 Pro. Perfect for teams, events,
             and short-term projects.
@@ -159,8 +159,8 @@ const SpecRow: React.FC<{ label: string; value: string }> = ({
   <li className="flex items-start gap-3">
     <Check />
     <div className="text-[15px] leading-6">
-      <span className="font-semibold text-slate-800">{label} </span>
-      <span className="text-slate-600">{value}</span>
+      <span className="font-semibold text-gray-900 dark:text-white">{label} </span>
+      <span className="text-gray-900 dark:text-white">{value}</span>
     </div>
   </li>
 );
@@ -177,7 +177,7 @@ const BrandCard: React.FC<BrandCardProps> = ({
   return (
     <div
       className={[
-        "group relative flex h-full flex-col rounded-2xl border border-slate-200/70 bg-white/90",
+        "group relative flex h-full flex-col rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm",
         "shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur",
         "transition-all duration-300 ease-out",
         "hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-900/5",
@@ -192,7 +192,7 @@ const BrandCard: React.FC<BrandCardProps> = ({
 
       {/* brand image */}
       <div className="px-8 pt-8">
-        <div className="relative mx-auto flex h-44 w-full max-w-[280px] items-center justify-center overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-200/70">
+        <div className="relative mx-auto flex h-44 w-full max-w-[280px] items-center justify-center overflow-hidden rounded-xl bg-gray-200 dark:bg-gray-900 text-gray-900 dark:text-white ring-1 ring-slate-200/70">
           {/* shine sweep on hover */}
           <span
             aria-hidden
@@ -210,12 +210,12 @@ const BrandCard: React.FC<BrandCardProps> = ({
 
       {/* specs */}
       <div className="flex grow flex-col px-8 pb-6 pt-5">
-        <h3 className="text-lg font-semibold text-slate-900">
+        <h3 className="text-lg font-semibold dark:text-gray-100 text-slate-900">
           {brand} Laptops
         </h3>
 
-        <ul className="mt-3 space-y-3">
-          <SpecRow label="Processor:" value={specs.processor} />
+        <ul className="mt-3 space-y-3 ">
+          <SpecRow label="Processor:" value={specs.processor}/>
           <SpecRow label="RAM:" value={specs.ram} />
           <SpecRow label="SSD Storage:" value={specs.ssd} />
           <SpecRow label="Display:" value={specs.display} />

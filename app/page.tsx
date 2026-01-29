@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import BlogCards from "@/components/BlogCards/BlogCards";
+import pcbricksbanner from '@/public/pcbricksbanner.jpeg'
 import {
   Brain,
   Truck,
@@ -690,7 +691,7 @@ export default function PCBricksLanding() {
                 <div className="relative z-1">
                   <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 dark:border-gray-700/20 shadow-2xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop"
+                      src={pcbricksbanner}
                       alt="Modern laptop and desktop setup"
                       width={600}
                       height={400}
