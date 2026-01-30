@@ -28,6 +28,8 @@ import {
   Facebook as LucideFacebook,
   Twitter as LucideTwitter,
   Instagram as LucideInstagram,
+  Youtube as LucideYoutube,
+  Linkedin as LucideLinkedin
 } from "lucide-react";
 import { use } from "react";
 export default function Footer() {
@@ -125,7 +127,7 @@ export default function Footer() {
           </p>
           <div className="flex space-x-4 mt-2 md:mt-0">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61585451573296"
               aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
@@ -134,22 +136,40 @@ export default function Footer() {
               <LucideFacebook className="w-5 h-5 text-white" />
             </a>
             <a
-              href="https://x.com"
-              aria-label="X"
+              href="https://www.youtube.com/@PcBricks_IT_solution"
+              aria-label="Youtube"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-400 transition-colors cursor-pointer"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-red-500 transition-colors cursor-pointer"
             >
-              <LucideTwitter className="w-5 h-5 text-white" />
+              <LucideYoutube className="w-5 h-5 text-white" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.linkedin.com/company/pcbricks-it-solutions/"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-blue-700 transition-colors cursor-pointer"
+            >
+              <LucideLinkedin className="w-5 h-5 text-white" />
+            </a>
+            <a
+              href="https://www.instagram.com/pcbricks.it/"
               aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-pink-500 transition-colors cursor-pointer"
             >
               <LucideInstagram className="w-5 h-5 text-white" />
+            </a>
+            <a
+              href="https://x.com/PcBricks_IT"
+              aria-label="X"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-black transition-colors cursor-pointer"
+            >
+              <LucideTwitter className="w-5 h-5 text-white" />
             </a>
           </div>
         </div>
