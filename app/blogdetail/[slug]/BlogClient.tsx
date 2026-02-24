@@ -125,7 +125,7 @@ export default function BlogDetailClient({ blog }) {
 
             <a
               href="mailto:pcbricksinfo@gmail.com"
-              className="block text-black dark:text-white font-medium hover:underline"
+              className="block text-black dark:!text-white font-medium hover:underline"
             >
               📧 Email: pcbricksinfo@gmail.com
             </a>
@@ -134,7 +134,7 @@ export default function BlogDetailClient({ blog }) {
               href="https://www.pcbricks.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-black dark:text-whitee font-medium hover:underline"
+              className="block text-black dark:text-white font-medium hover:underline"
             >
               🌐 Get Your Quote: Visit PCBricks
             </a>
