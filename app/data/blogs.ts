@@ -9,6 +9,8 @@ import blog8 from "../../public/blogs/blog8.jpeg";
 
 const currentDate = new Date().toLocaleDateString("en-IN");
 
+
+
 export const blogs = [
   {
     slug: "best-laptop-rental-services-bangalore",
