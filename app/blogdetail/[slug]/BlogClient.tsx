@@ -112,20 +112,20 @@ export default function BlogDetailClient({ blog }) {
       if (section.type === "contact") {
         return (
           <div key={sectionIndex} className="mt-8 p-6  rounded-xl space-y-4">
-            <h3 className="text-xl font-bold text-white dark:text-white">
+            <h3 className="text-xl font-bold text-black dark:text-white">
               Contact PCBricks
             </h3>
 
             <a
               href="tel:+917975506175"
-              className="block text-white font-medium hover:underline"
+              className="block text-black dark:text-white font-medium hover:underline"
             >
               📞 Call Us Now: +91 79 7550 6175
             </a>
 
             <a
               href="mailto:pcbricksinfo@gmail.com"
-              className="block text-white font-medium hover:underline"
+              className="block text-black dark:text-white font-medium hover:underline"
             >
               📧 Email: pcbricksinfo@gmail.com
             </a>
@@ -134,7 +134,7 @@ export default function BlogDetailClient({ blog }) {
               href="https://www.pcbricks.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-white font-medium hover:underline"
+              className="block text-black dark:text-whitee font-medium hover:underline"
             >
               🌐 Get Your Quote: Visit PCBricks
             </a>
